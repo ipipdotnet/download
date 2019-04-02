@@ -1,6 +1,6 @@
 <?php
 // 每周高级版的客户不需要指定type参数
-$data = file_get_contents('https://user.ipip.net/download.php?type=datx&token=TOKEN');//注意要替换成自己的下载地址，不同文件格式地址不同。
+$data = file_get_contents('https://user.ipip.net/download.php?type=ipdb&token=TOKEN');//注意要替换成自己的下载地址，不同文件格式地址不同。
 
 $verified = FALSE;
 $filename = '';
@@ -28,7 +28,7 @@ if ($verified)
 {
     if ($filename == '')
     {
-        $filename = 'ipip.dat';
+        $filename = 'ipip.ipdb';
     }
     file_put_contents(__DIR__ . '/' . $filename, $data, LOCK_EX);
 }
